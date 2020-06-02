@@ -1,7 +1,10 @@
 <?php
 
+namespace Dev\Helper\Decomposer;
+
 /**
  * Interface DecomposerInterface
+ * @package Dev\Helper\Decomposer
  */
 interface DecomposerInterface
 {
@@ -12,5 +15,5 @@ interface DecomposerInterface
      *
      * @return array
      */
-    public function decompose(int $batchSize, int $totalCount, array $params = []): array;
+    public static function decompose(int $batchSize, int $totalCount, array $params = []): array;
 }
