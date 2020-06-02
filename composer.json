@@ -4,8 +4,8 @@
   "type": "library",
   "autoload": {
     "psr-4": {
-      "Dev\\Helper\\Decomposer\\": "src/",
-      "Test\\Dev\\Helper\\Decomposer\\": "tests/"
+      "MShumakov\\Helper\\Decomposer\\": "src/",
+      "Test\\MShumakov\\Helper\\Decomposer\\": "tests/"
     }
   },
   "require": {

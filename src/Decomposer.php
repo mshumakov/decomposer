@@ -1,10 +1,10 @@
 <?php
 
-namespace Dev\Helper\Decomposer;
+namespace MShumakov\Helper\Decomposer;
 
 /**
  * Class Decomposer
- * @package Dev\Helper\Decomposer
+ * @package MShumakov\Helper\Decomposer
  */
 class Decomposer implements DecomposerInterface
 {
