@@ -29,8 +29,12 @@ class Decomposer implements DecomposerInterface
             $batchSizesSet[] = $totalCount;
         }
 
-        $data[] = $params;
+        $data = [];
         $offset = 0;
+
+        if ($params) {
+            $data[] = $params;
+        }
 
         foreach ($batchSizesSet as $limit) {
             $data[] = [
