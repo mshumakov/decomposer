@@ -13,6 +13,34 @@ class Decomposer implements DecomposerInterface
      */
     public static function decompose(int $batchSize, int $totalCount, array $params = []): array
     {
-        return [];
+        if (!$batchSize || !$totalCount) {
+            return [];
+        }
+
+        $batchSizesSet = [];
+        if ($totalCount > $batchSize) {
+            $numberOfBatches = (int)ceil($totalCount / $batchSize);
+            for ($i = 1; $i <= $numberOfBatches; $i++) {
+                $batchSizesSet[] = ($i !== $numberOfBatches)
+                    ? $batchSize
+                    : ($totalCount - array_sum($batchSizesSet));
+            }
+        } else {
+            $batchSizesSet[] = $totalCount;
+        }
+
+        $data[] = $params;
+        $offset = 0;
+
+        foreach ($batchSizesSet as $limit) {
+            $data[] = [
+                'offset' => $offset,
+                'limit'  => $limit,
+            ];
+
+            $offset += $batchSize;
+        }
+
+        return $data;
     }
 }
