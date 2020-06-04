@@ -11,9 +11,9 @@ interface DecomposerInterface
     /**
      * @param int $batchSize
      * @param int $totalCount
-     * @param array $params
+     * @param array $parameters
      *
      * @return array
      */
-    public static function decompose(int $batchSize, int $totalCount, array $params = []): array;
+    public static function decompose(int $batchSize, int $totalCount, array $parameters = []): array;
 }

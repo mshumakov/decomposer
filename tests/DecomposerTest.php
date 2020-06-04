@@ -20,6 +20,28 @@ class DecomposerTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testParamsDecompose(): void
+    {
+        $params = [
+            'hello' => 'world'
+        ];
+        $expected = array_merge($params, [
+            'list' => [
+                [
+                    'offset' => 0,
+                    'limit' => 10,
+                ],
+                [
+                    'offset' => 10,
+                    'limit' => 10,
+                ]
+            ]
+        ]);
+        $actual = Decomposer::decompose(10, 20, $params);
+
+        $this->assertEquals($expected, $actual);
+    }
+
     /**
      * @param $batchSize
      * @param $totalCount
@@ -60,9 +82,11 @@ class DecomposerTest extends TestCase
                 1,
                 1,
                 [
-                    [
-                        'offset' => 0,
-                        'limit'  => 1
+                    'list' => [
+                        [
+                            'offset' => 0,
+                            'limit'  => 1
+                        ]
                     ]
                 ]
             ],
@@ -70,13 +94,15 @@ class DecomposerTest extends TestCase
                 5,
                 10,
                 [
-                    [
-                        'offset' => 0,
-                        'limit'  => 5
-                    ],
-                    [
-                        'offset' => 5,
-                        'limit'  => 5
+                    'list' => [
+                        [
+                            'offset' => 0,
+                            'limit'  => 5
+                        ],
+                        [
+                            'offset' => 5,
+                            'limit'  => 5
+                        ]
                     ]
                 ]
             ],
@@ -84,17 +110,19 @@ class DecomposerTest extends TestCase
                 13,
                 37,
                 [
-                    [
-                        'offset' => 0,
-                        'limit'  => 13
-                    ],
-                    [
-                        'offset' => 13,
-                        'limit'  => 13
-                    ],
-                    [
-                        'offset' => 26,
-                        'limit'  => 11
+                    'list' => [
+                        [
+                            'offset' => 0,
+                            'limit'  => 13
+                        ],
+                        [
+                            'offset' => 13,
+                            'limit'  => 13
+                        ],
+                        [
+                            'offset' => 26,
+                            'limit'  => 11
+                        ]
                     ]
                 ]
             ],

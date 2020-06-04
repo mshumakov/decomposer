@@ -11,7 +11,7 @@ class Decomposer implements DecomposerInterface
     /**
      * @inheritDoc
      */
-    public static function decompose(int $batchSize, int $totalCount, array $params = []): array
+    public static function decompose(int $batchSize, int $totalCount, array $parameters = []): array
     {
         if (!$batchSize || !$totalCount) {
             return [];
@@ -29,15 +29,11 @@ class Decomposer implements DecomposerInterface
             $batchSizesSet[] = $totalCount;
         }
 
-        $data = [];
+        $data = $parameters ?: [];
         $offset = 0;
 
-        if ($params) {
-            $data[] = $params;
-        }
-
         foreach ($batchSizesSet as $limit) {
-            $data[] = [
+            $data['list'][] = [
                 'offset' => $offset,
                 'limit'  => $limit,
             ];
