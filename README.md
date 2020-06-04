@@ -1,6 +1,6 @@
 # decomposer
 
-[![start with why](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat)]()
+[![start with why](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat)](https://telegra.ph/Why-decomposer-06-04)
 [![build](https://github.com/mshumakov/decomposer/workflows/build/badge.svg)](https://github.com/mshumakov/decomposer/actions)
 [![coverage](https://codecov.io/gh/mshumakov/decomposer/branch/master/graph/badge.svg)](https://codecov.io/gh/mshumakov/decomposer)
 
