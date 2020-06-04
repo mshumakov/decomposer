@@ -18,7 +18,7 @@ composer require mshumakov/decomposer
 
 A basic example of using a package to break data into fragments.
 
-```shell script
+```php
 <?php
 declare(strict_types=1);
 
@@ -34,6 +34,9 @@ $data = [
 
 $batchSize = 10; // Fragment size
 $totalCount = count($data); // Total amount of data
+$params = [
+    'hello' => 'world'
+];
 
 /**
  * In the response, we return the passed parameters 
