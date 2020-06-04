@@ -15,7 +15,7 @@ class DecomposerTest extends TestCase
     public function testEmptyDecompose(): void
     {
         $expected = [];
-        $actual = Decomposer::decompose(0, 0);
+        $actual = Decomposer::decompose(0, 0, ['hello' => 'world']);
 
         $this->assertEquals($expected, $actual);
     }
