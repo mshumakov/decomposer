@@ -1,14 +1,14 @@
 <?php
 
-namespace Test\MSdev\Helper\Decomposer;
+namespace Test\MShumakov\Helper\Decomposer;
 
-use MSdev\Helper\Decomposer\Decomposer;
+use MShumakov\Helper\Decomposer\Decomposer;
 use PHPUnit\Framework\TestCase;
 use TypeError;
 
 /**
  * Class DecomposerTest
- * @package Test\MSdev\Helper\Decomposer
+ * @package Test\MShumakov\Helper\Decomposer
  */
 class DecomposerTest extends TestCase
 {
