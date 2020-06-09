@@ -45,7 +45,8 @@ $params = [
  * 
  * p.s.: More information in the tests.
  */
-$fragments = Decomposer::decompose(
+$decomposer = new Decomposer();
+$fragments = $decomposer->decompose(
     $batchSize, 
     $totalCount,
     $params

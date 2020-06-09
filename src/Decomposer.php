@@ -11,7 +11,7 @@ class Decomposer implements DecomposerInterface
     /**
      * @inheritDoc
      */
-    public static function decompose(int $batchSize, int $totalCount, array $parameters = []): array
+    public function decompose(int $batchSize, int $totalCount, array $parameters = []): array
     {
         if (!$batchSize || !$totalCount) {
             return [];

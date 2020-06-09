@@ -12,10 +12,21 @@ use TypeError;
  */
 class DecomposerTest extends TestCase
 {
+    /** @var Decomposer */
+    public $decomposer;
+
+    /**
+     * @inheritDoc
+     */
+    public function setUp(): void
+    {
+        $this->decomposer = new Decomposer();
+    }
+
     public function testEmptyDecompose(): void
     {
         $expected = [];
-        $actual = Decomposer::decompose(0, 0, ['hello' => 'world']);
+        $actual = $this->decomposer->decompose(0, 0, ['hello' => 'world']);
 
         $this->assertEquals($expected, $actual);
     }
@@ -37,7 +48,7 @@ class DecomposerTest extends TestCase
                 ]
             ]
         ]);
-        $actual = Decomposer::decompose(10, 20, $params);
+        $actual = $this->decomposer->decompose(10, 20, $params);
 
         $this->assertEquals($expected, $actual);
     }
@@ -51,7 +62,7 @@ class DecomposerTest extends TestCase
      */
     public function testGoodDecompose($batchSize, $totalCount, $excepted): void
     {
-        $actual = Decomposer::decompose($batchSize, $totalCount);
+        $actual = $this->decomposer->decompose($batchSize, $totalCount);
         $this->assertEquals($excepted, $actual);
     }
 
@@ -64,7 +75,7 @@ class DecomposerTest extends TestCase
     public function testTypeErrorDecompose($batchSize, $totalCount): void
     {
         $this->expectException(TypeError::class);
-        Decomposer::decompose($batchSize, $totalCount);
+        $this->decomposer->decompose($batchSize, $totalCount);
     }
 
     /**
