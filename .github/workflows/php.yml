@@ -28,7 +28,7 @@ jobs:
 
       - name: Install dependencies
         if: steps.composer-cache.outputs.cache-hit != 'false'
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer update
 
       - name: Run tests (phpunit)
         run: vendor/bin/phpunit -c phpunit.xml.dist
