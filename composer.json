@@ -1,5 +1,5 @@
 {
-  "name": "MSdev/decomposer",
+  "name": "mshumakov/decomposer",
   "description": "Separation of a large piece of data into controlled fragments.",
   "type": "library",
   "autoload": {
