@@ -23,7 +23,7 @@ A basic example of using a package to break data into fragments.
 <?php
 declare(strict_types=1);
 
-use MShumakov\Helper\Decomposer;
+use MSdev\Helper\Decomposer;
 
 require __DIR__ . '/../vendor/autoload.php';
 
