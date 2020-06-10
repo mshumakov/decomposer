@@ -3,6 +3,13 @@
   "description": "Separation of a large piece of data into controlled fragments.",
   "type": "library",
   "license": "GPL-3.0-only",
+  "keywords": ["php-library", "php", "data", "fragments"],
+  "authors": [
+    {
+      "name": "Maksim Shumakov",
+      "email": "ms.profile.dev@gmail.com"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "MSdev\\Helper\\Decomposer\\": "src/",
